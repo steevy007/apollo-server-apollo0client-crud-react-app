@@ -1,0 +1,21 @@
+type Query{
+    personnes:[Personne]
+    personne(id:ID!):Personne
+    fakerPeople:[Personne!]!
+}
+
+type Mutation{
+    addPersonne(nom:String,prenom:String,email:String,sexe:String):Personne
+    editPersonne(id:ID!,nom:String,prenom:String,sexe:String):Personne
+    deletePersonne(id:ID!):Personne
+    deleteAll:Boolean
+    contact(fullname:String,object:String,email:String,message:String):Boolean
+}
+
+type Personne{
+    id:ID!
+    nom:String!
+    prenom:String!
+    email:String
+    sexe:String!
+}
